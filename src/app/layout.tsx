@@ -4,6 +4,7 @@ import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from 'next-intl'
 import { ReduxProviders } from "@/app/reduxProvider";
 import { Providers } from "./Providers";
+import MainNavBar from "@/components/navbars/mainNabar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,6 +24,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <ReduxProviders>
             <Providers>
+              <MainNavBar />
               {children}
             </Providers>
           </ReduxProviders>
